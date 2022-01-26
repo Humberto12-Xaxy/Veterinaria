@@ -1,0 +1,63 @@
+.contenedor{
+    width: 100%;
+}
+.tabla{
+    width: 100% !important;
+    margin-top: 0.5%;
+    margin-left: 30px;
+    display: flex;
+}
+.tabla table{
+    width: 700px !important;
+    font-size: 13px;
+}
+.mostrarCompleto{
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 30px;
+
+}
+.descr{
+    width: 700px;
+}
+.apis{
+    width: 70%;
+    margin: 0 auto;
+}
+.texto {
+    font-size: 10px !important;
+}
+.aniadir{
+    width: 100%;
+    margin-left: 25px !important;
+}
+.inputs{
+    display: flex;
+    width: 80%;
+}
+.inputs input{
+    width: 50% !important;
+}
+.boton{
+    margin-top: -8px;
+    padding: 5px;
+    font-size: 13px;
+}
+.texto{
+    font-size: 13px !important;
+}
+.but{
+    margin-top: 5px;
+}
+.but button{
+    margin-left: 220px;
+}
+.busc input{
+    width: 100%;
+}
+.botn2{
+    margin-left: 5px;
+}
+.margen{
+    margin-top: 15px;
+}
