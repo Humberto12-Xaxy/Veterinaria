@@ -50,7 +50,7 @@ export default function ActualizarM(props) {
                         setFechaIngreso('');
                         setRazon('');
                         
-                }} className='btn btn-dark'>Actualizar</button></div>
+                }}} className='btn btn-dark'>Actualizar</button></div>
             </div>
     )
 }

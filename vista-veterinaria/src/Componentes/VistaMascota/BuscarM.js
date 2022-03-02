@@ -33,7 +33,7 @@ const BuscarM = (props) => {
                     <button className='btn btn-dark botn2' onClick={()=>{
                         hundleClick();
                     }}>Limpiar</button>
-                </div>
+               
         </div>
     )
 }
