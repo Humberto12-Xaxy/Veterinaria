@@ -1,0 +1,15 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+form{
+  background: rgb(146, 146, 247);
+  width: 18em;
+  height: 18em;
+}

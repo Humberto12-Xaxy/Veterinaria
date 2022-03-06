@@ -34,7 +34,6 @@ const BuscarM = (props) => {
                         hundleClick();
                     }}>Limpiar</button>
                 </div>
-        </div>
     )
 }
 
