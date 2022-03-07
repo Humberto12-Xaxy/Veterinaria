@@ -1,20 +1,28 @@
 package floresnataren.duenios.controlador;
 
-import floresnataren.duenios.modelo.DuenioMascota;
-import floresnataren.duenios.modelo.Mascota;
+import floresnataren.duenios.modelo.*;
+import floresnataren.duenios.repositorio.UserRepositorio;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.web.bind.annotation.*;
-import floresnataren.duenios.modelo.Duenio;
 import floresnataren.duenios.repositorio.DuenioRepository;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/")
 public class DuenioController {
     @Autowired
     DuenioRepository duenioRepository;
+
+    @Autowired
+    UserRepositorio userRepositorio;
 
     @Autowired
     RestTemplate restTemplate;
@@ -67,5 +75,36 @@ public class DuenioController {
             return true;
         }
         return null;
+    }
+
+    private String getJWTToken(String username) {
+        String secretKey = "secreto";
+        List<GrantedAuthority> grantedAuthorities = AuthorityUtils
+                .commaSeparatedStringToAuthorityList("ROLE_USER");
+
+        String token = Jwts
+                .builder()
+                .setId("userJWT")
+                .setSubject(username)
+                .claim("authorities",
+                        grantedAuthorities.stream()
+                                .map(GrantedAuthority::getAuthority)
+                                .collect(Collectors.toList()))
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 6000000))
+                .signWith(SignatureAlgorithm.HS512,
+                        secretKey.getBytes()).compact();
+
+        return "Bearer " + token;
+    }
+
+    @PostMapping(value = "/login")
+    public String login(@RequestBody UsuarioCredentials credentials){
+        User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUser(), credentials.getPassword());
+        if (usuario != null)
+            return getJWTToken(usuario.getusername());
+        else
+            return "No hay";
+
     }
 }
