@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -12,7 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityFilter {
 
     @Order(1)
     @Configuration
@@ -20,13 +19,13 @@ public class SecurityConfig {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/user/JSON")
+                    .antMatcher("/login")
                     .cors()
                     .and()
                     .csrf()
                     .disable() // we don't need CSRF because our token is invulnerable
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, "/user/JSON/**").permitAll()
+                    .antMatchers(HttpMethod.POST, "/login/**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
