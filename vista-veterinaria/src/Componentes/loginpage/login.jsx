@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import '../assets/css/styleLogin.css';
-import { Link } from 'react-router-dom';
+import AppRouter from '../AppRouter';
 
 const Login = () =>{
     const [user, setUser] = useState('')
@@ -17,12 +17,18 @@ const Login = () =>{
             alert('Credenciales invalidas')
         }
         else{
-            axios.post('http://localhost:18080/login', credentials).then(res => {
-                console.log(res.data)
-            })
+            // axios.post('http://localhost:18080/login', credentials).then(res => {
+            //     console.log(res.data)
+            // })
+            methodPost(credentials)
         }
     } 
 
+    const methodPost = async (credentials) =>{
+        const res = await axios.post('http://localhost:18080/login', credentials)
+        if (res.data !== 'No hay')
+            document.cookie = 'token=' + res.data
+    }
 
 
     return(
@@ -41,6 +47,8 @@ const Login = () =>{
                 </div>
                 <button type='button' className = 'btn btn-primary' onClick={() =>{
                   handleLogin()
+                  console.log(document.cookie)
+                //   jsCookie.get('token') ? (<AppRouter/>) : (<Login/>) 
                 }}>Login</button>
             </div>
        </div> 
