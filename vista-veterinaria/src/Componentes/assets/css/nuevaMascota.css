@@ -1,0 +1,43 @@
+.registroMascota {
+ 
+    margin-left: 9% !important;
+    margin-top: 10% !important;
+    
+
+}
+.registroMascota, .titulo{
+    color: black;
+    margin-left: 4%;
+    
+}
+
+.registroMascota, #nombreM,#raza,#fecha,#razon{
+    color: green;
+    
+}
+
+.registroMascota #boton{
+    margin-left: 30%;
+}
+
+.updateMascota {
+ 
+    margin-left:50% !important;
+    margin-top: -25% !important;
+    
+
+}
+.updateMascota, .tituloU{
+    color: black;
+    margin-left: 14%;
+    
+}
+
+.updateMascota, #nombreMu,#razaU,#fechaU,#razonU{
+    color: green;
+    
+}
+
+.updateMascota #botonU{
+    margin-left: 30%;
+}
