@@ -52,6 +52,7 @@ public class DuenioController {
     public Duenio addDuenio(@RequestBody Duenio duenio){
         return duenioRepository.save(duenio);
     }
+
     @PostMapping(value = "/duenio/update")
     public Duenio updateDuenio(@RequestBody Duenio duenio){
         if(duenioRepository.findByIdDuenio(duenio.getIdDuenio()) != null){
