@@ -26,6 +26,7 @@ export default function AddMascota(props) {
             props.onMascotasChange(response.data);
         }).catch(console.log('No se pudo actualizar'));
     }
+    
     return (
         <div>
             <div className="aniadir">

@@ -2,38 +2,38 @@ package floresnataren.duenios.modelo;
 
 public class UsuarioCredentials {
 
-    private String user;
+    private String username;
     private String password;
+    public UsuarioCredentials(){}
 
-    public UsuarioCredentials(String user, String password) {
-        this.user = user;
+    public UsuarioCredentials(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
-    public UsuarioCredentials() {
+    public String getUsername() {
+        return username;
     }
 
-    public String getUser() {
-        return user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setPassword(String contraseña) {
-        this.password = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
         return "UsuarioCredentials{" +
-                "user='" + user + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }

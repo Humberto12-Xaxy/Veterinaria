@@ -1,0 +1,21 @@
+.registroUsuario {
+ 
+    margin-left: 40% !important;
+    margin-top: 10% !important;
+    
+
+}
+.registroUsuario, .titulo{
+    color: black;
+    margin-left: 8%;
+    
+}
+
+.registroUsuario, #nombre_id,#apellido_id,#edad_id,#usuario_id,#contrasenia_id{
+    color: green;
+    
+}
+
+.registroUsuario #boton{
+    margin-left: 40%;
+}

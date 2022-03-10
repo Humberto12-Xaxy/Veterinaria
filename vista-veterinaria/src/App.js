@@ -5,6 +5,7 @@ import MenuPrincipalMA from './Componentes/VistaMascota/menuMascotaUser';
 import TablaMascotaU from './Componentes/VistaMascota/tablaMascotaU';
 
 
+import Register from './Componentes/registroUsuario/registerUser'
 function App() {
   return (
     <div className="App">
@@ -13,5 +14,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;

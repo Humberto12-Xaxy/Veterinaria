@@ -60,6 +60,7 @@ public class DuenioController {
     public Duenio addDuenio(@RequestBody Duenio duenio){
         return duenioRepository.save(duenio);
     }
+
     @PostMapping(value = "/duenio/update")
     public Duenio updateDuenio(@RequestBody Duenio duenio){
         if(duenioRepository.findByIdDuenio(duenio.getIdDuenio()) != null){
@@ -98,13 +99,34 @@ public class DuenioController {
         return "Bearer " + token;
     }
 
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/user/login")
     public String login(@RequestBody UsuarioCredentials credentials){
-        User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUser(), credentials.getPassword());
+        User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUsername(), credentials.getPassword());
+        System.out.println(usuario);
+        System.out.println("HOLISSS");
         if (usuario != null)
-            return getJWTToken(usuario.getusername());
+            return getJWTToken(usuario.getUsername());
         else
             return "No hay";
 
     }
+
+    @PostMapping(value = "/user/registro")
+    public boolean register(@RequestBody User usuario){
+        User user = userRepositorio.save(usuario);
+
+        if(user != null){
+            return true;
+        }else {
+            return false;
+        }
+
+
+    }
+
+
+
+
+
+
 }

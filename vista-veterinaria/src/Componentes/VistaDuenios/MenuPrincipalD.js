@@ -11,6 +11,7 @@ export default function MenuPrincipalD() {
     const [duenios, setDuenios] = useState(null);
     const [duenio,setDuenio] = useState(null);
     const [estado,setEstado] = useState(1);
+    
     useEffect(()=>{
         obtenerDuenios();
         console.log(duenio)

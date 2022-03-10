@@ -9,6 +9,7 @@ import RegisterM from './VistaMascota/AddMascotaUser';
 import MenuPrincipalMA from './VistaMascota/menuMascotaUser';
 import MenuPrincipalM from './VistaMascota/MenuPrincipalM';
 import MenuPrincipalMe from './VistaMedicamentos/MenuPrincipalMe.js';
+import Register from './registroUsuario/registerUser';
 
 export default function AppRouter() {
     return (
