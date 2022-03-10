@@ -73,11 +73,11 @@ body{
 .tabla{
     width: 100% !important;
     margin-top: 0.5%;
-    margin-left: 30px;
+    margin-left: 10px;
     display: flex;
 }
 .tabla table{
-    width: 700px !important;
+    width: 600px !important;
 }
 .mostrarCompleto{
     width: 100%;

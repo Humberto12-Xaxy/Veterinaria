@@ -1,19 +1,24 @@
 package gomezherrera.mascotas.repository;
 
 
+import gomezherrera.mascotas.model.MascotaU;
 import org.springframework.data.repository.CrudRepository;
-import gomezherrera.mascotas.model.Mascota;
+
 
 import java.util.List;
 
-public interface MascotaRepository extends CrudRepository<Mascota, Integer> {
-    List<Mascota> findAll();
-    List<Mascota> findByIdDuenio(int idDuenio);
-    List<Mascota> findByIdMedicamento(int idMedicamento);
-    List<Mascota> findByTipo(String tipo);
-    Mascota findByIdCita(int idCita);
-    Mascota findByIdMascota(int idMascota);
-    List<Mascota>findAllByNombre(String nombre);
-    Mascota save(Mascota mascota);
-    void delete(Mascota mascota);
+public interface MascotaRepository extends CrudRepository<MascotaU, Integer> {
+    List<MascotaU> findAll();
+    /*
+    List<MascotaU> findByIdDuenio(int idDuenio);
+    List<MascotaU> findByIdMedicamento(int idMedicamento);
+    List<MascotaU> findByTipo(String tipo);
+    MascotaU findByIdCita(int idCita);
+     MascotaU findByIdMascota(int idMascota);
+    List<MascotaU>findAllByNombre(String nombre);
+     void delete(MascotaU mascota);
+     */
+
+    MascotaU save(MascotaU mascota);
+
 }

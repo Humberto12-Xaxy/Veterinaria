@@ -103,7 +103,6 @@ public class DuenioController {
     public String login(@RequestBody UsuarioCredentials credentials){
         User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUsername(), credentials.getPassword());
         System.out.println(usuario);
-        System.out.println("HOLISSS");
         if (usuario != null)
             return getJWTToken(usuario.getUsername());
         else
