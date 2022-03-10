@@ -9,7 +9,7 @@ import Register from './Componentes/registroUsuario/registerUser'
 function App() {
   return (
     <div className="App">
-      <AppRouter/>
+      <Login/>
      {/* <TablaMascotaU/> */}
     </div>
   );
