@@ -99,9 +99,11 @@ public class DuenioController {
         return "Bearer " + token;
     }
 
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/user/login")
     public String login(@RequestBody UsuarioCredentials credentials){
-        User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUser(), credentials.getPassword());
+        User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUsername(), credentials.getPassword());
+        System.out.println(usuario);
+        System.out.println("HOLISSS");
         if (usuario != null)
             return getJWTToken(usuario.getUsername());
         else
@@ -109,10 +111,19 @@ public class DuenioController {
 
     }
 
-    @PostMapping(value = "/registerUser")
-    public void register(@RequestBody User usuario){
-        userRepositorio.save(usuario);
+    @PostMapping(value = "/user/registro")
+    public boolean register(@RequestBody User usuario){
+        User user = userRepositorio.save(usuario);
+
+        if(user != null){
+            return true;
+        }else {
+            return false;
+        }
+
+
     }
+
 
 
 

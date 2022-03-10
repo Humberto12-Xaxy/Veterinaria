@@ -19,13 +19,13 @@ public class SecurityFilter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/registerUser")
+                    .antMatcher("/user/**")
                     .cors()
                     .and()
                     .csrf()
                     .disable() // we don't need CSRF because our token is invulnerable
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, "/registerUser").permitAll()
+                    .antMatchers(HttpMethod.POST, "/user/**").permitAll()
 
 
                     .anyRequest().authenticated()

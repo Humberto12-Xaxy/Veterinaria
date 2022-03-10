@@ -7,7 +7,7 @@ import MenuPrincipal from './VistaCita/MenuPrincipalC';
 import MenuPrincipalD from './VistaDuenios/MenuPrincipalD';
 import MenuPrincipalM from './VistaMascota/MenuPrincipalM';
 import MenuPrincipalMe from './VistaMedicamentos/MenuPrincipalMe.js';
-
+import Register from './registroUsuario/registerUser';
 
 export default function AppRouter() {
     return (

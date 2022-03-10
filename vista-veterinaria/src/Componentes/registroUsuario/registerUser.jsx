@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 import '../assets/css/nuevoDuenio.css'
+import Login from '../loginpage/login';
+
 export default function Register(){
     const [nombre,setNombre] = useState('')
     const [apellido,setApellido] = useState('')
@@ -9,8 +11,9 @@ export default function Register(){
     const [usuario,setUsuario] = useState('')
     const [contrasenia,setContrasenia] = useState('')
     const [rol,setRol] = useState('')
+    const [isRegister,setIsRegister] = useState(false)
 
-const handleRegister = () => {
+const handleRegister = async () => {
     let usuario_JSON = {
         nombre : nombre,
         apellidos : apellido,
@@ -20,13 +23,21 @@ const handleRegister = () => {
         rol : rol
 
     }
-    axios.post('http://localhost:18080/registerUser',usuario_JSON)
+
+   const resultado = await axios.post('http://localhost:18080/user/registro',usuario_JSON)
+   console.log(resultado)
+   setIsRegister(resultado)
+   
+
+
 
 }
 
+ 
 
     return(
-        <div>
+        <>{isRegister? <Login/> : (
+            <div>
             <div className='registroUsuario'>
                 <h2 className='titulo'>Nuevo Usuario</h2>
                 <br />
@@ -63,9 +74,13 @@ const handleRegister = () => {
                     <br />
                     <button id= 'boton' type="button" class="btn btn-outline-success" onClick={() => {handleRegister()}}>Registrar</button>
                     </ul>
+                  
                     
                 </div>
             </div>
         </div>
+        )}
+       
+        </>
     )
 }
