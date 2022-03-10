@@ -5,7 +5,7 @@ export default function CitaCMascota(props) {
     const [citaCmascota,setCitaCMascota] = useState();
     useEffect(()=>{
         document.title='Citas';
-        if (props.cita !== null && props.cita !== undefined){
+    if (props.cita !== null && props.cita !== undefined){
             obtenerCitasCMascota();
         }
     })
