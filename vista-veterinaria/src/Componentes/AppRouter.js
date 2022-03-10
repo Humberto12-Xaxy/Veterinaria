@@ -5,6 +5,8 @@ import Login from './loginpage/login';
 import NavBar from './NavBar';
 import MenuPrincipal from './VistaCita/MenuPrincipalC';
 import MenuPrincipalD from './VistaDuenios/MenuPrincipalD';
+import RegisterM from './VistaMascota/AddMascotaUser';
+import MenuPrincipalMA from './VistaMascota/menuMascotaUser';
 import MenuPrincipalM from './VistaMascota/MenuPrincipalM';
 import MenuPrincipalMe from './VistaMedicamentos/MenuPrincipalMe.js';
 
@@ -14,11 +16,11 @@ export default function AppRouter() {
             <NavBar/>
                 <div>
                     <Routes>
-                        {/* <Route path='/' element={<Login/>}/> */}
+                        <Route path='/' element={<Login/>}/>
                         <Route path='/' element={<HomePage/>}/>
                         <Route path = '/citas' element={<MenuPrincipal/>}/>
                         <Route path='/duenios' element={<MenuPrincipalD/>}/>
-                        <Route path='/mascotas/' element={<MenuPrincipalM/>}/>
+                        <Route path='/mascotas/' element={<MenuPrincipalMA/>}/>
                         <Route path='/medicamentos/' element={<MenuPrincipalMe/>}/>
                     </Routes>
                 </div>

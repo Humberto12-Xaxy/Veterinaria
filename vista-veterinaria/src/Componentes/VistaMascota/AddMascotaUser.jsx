@@ -1,15 +1,16 @@
 import React from 'react'
 import axios, { Axios } from 'axios';
-import { useState } from 'react';
 import '../assets/css/nuevaMascota.css'
 import ActualizarMUser from './ActualizarMUser';
+import TablaMascotaU from './tablaMascotaU';
+import { useState, useEffect } from 'react';
 export default function RegisterM(){
     const [nombre,setNombre] = useState('')
     const [raza,setRaza] = useState('')
     const [fecha,setFecha] = useState('')
     const [razon,setRazon] = useState('')
-
     
+
     const handleRegister=()=>{
         const dato = {
             nombre:nombre,
@@ -45,12 +46,13 @@ export default function RegisterM(){
                     <button id= 'boton' type="button" class="btn btn-outline-success" onClick={()=>{ 
                         console.log(fecha)
                         handleRegister()
+                        window.location.replace('');
                     }}>Registrar mascota</button>
+                    
                     </ul>
                     
                 </div>
             </div>
-        {/* <ActualizarMUser/> */}
         </div>
          
         

@@ -34,9 +34,9 @@ export default function AddMascota(props) {
                     <div className=''>
                         <input className='input-group-text texto' type="text" name="nombre" id="nombreM" placeholder='Nombre' onChange={e => setNombre(e.target.value)} />
                         <input className='input-group-text texto' type="text" name="tipo" id="tipoM" placeholder='Tipo' onChange={e => setTipo(e.target.value)} />
-                        {/* <input className='input-group-text texto' type="number" name="idDuenio" id="idDuenioM" placeholder='IdDuenio' onChange={e=>setIdDuenio(parseInt(e.target.value))}/> */}
-                        {/* <input className='input-group-text texto' type="number" name="idCita" id="idCitaM" placeholder='IdCita' onChange={e=>setIdCita(parseInt(e.target.value))}/> */}
-                        {/* <input className='input-group-text texto' type="number" name="idMedicamento" id="idMedicamentoM" placeholder='IdMedicamento' onChange={e=>setIdMedicamento(parseInt(e.target.value))}/> */}
+                         <input className='input-group-text texto' type="number" name="idDuenio" id="idDuenioM" placeholder='IdDuenio' onChange={e=>setIdDuenio(parseInt(e.target.value))}/> 
+                         <input className='input-group-text texto' type="number" name="idCita" id="idCitaM" placeholder='IdCita' onChange={e=>setIdCita(parseInt(e.target.value))}/> 
+                         <input className='input-group-text texto' type="number" name="idMedicamento" id="idMedicamentoM" placeholder='IdMedicamento' onChange={e=>setIdMedicamento(parseInt(e.target.value))}/> 
                         <input className='input-group-text texto' type="text" name="fechaIngreso" id="fechaIngresoM" placeholder='Fecha de ingreso' onChange={e => setFechaIngreso(e.target.value)} />
                         <input className='input-group-text texto' type="text" name="razon" id="razonM" placeholder='Razon' onChange={e => setRazon(e.target.value)} />
                         <button className='btn btn-dark' onClick={() => {

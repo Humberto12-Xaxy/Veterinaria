@@ -20,10 +20,10 @@ const TablaMascota = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.mascotas.map(({ idMascota, nombre, tipo, idDuenio, idCita, idMedicamento, fechaIngreso, razon }, i) => (
+                        {this.props.mascotas.map(({ idMascota, nombre, tipo, idDuenio, idCita, idMedicamento, fechaIngreso, razon }, i) => (
                             <tr>
-                                <td>{nombre}</td><td>{tipo}</td><td>{idMedicamento}</td><td>{fechaIngreso}</td><td>{razon}</td><td><button onClick={() => {
-                                    props.onMascotaChange({ idMascota: idMascota, nombre: nombre, tipo: tipo, idDuenio: idDuenio, idCita: idCita, idMedicamento: idMedicamento, fechaIngreso: fechaIngreso, raon: razon });
+                                <td>{nombre}</td><td>{tipo}</td><td>{idMedicamento}</td><td>{fechaIngreso}</td><td>{razon}</td><td><button onClick= { () => {
+                                    props.onMascotaChange({ idMascota: idMascota, nombre: nombre, tipo: tipo, idDuenio: idDuenio, idCita: idCita, idMedicamento: idMedicamento, fechaIngreso: fechaIngreso, razon: razon });
                                     props.onChangeEstado(1)
                                 }} className='btn boton'>Ver más</button></td><td><button className='btn boton' onClick={() => {
                                     props.onMascotaChange({ idMascota: idMascota, nombre: nombre, tipo: tipo, idDuenio: idDuenio, idCita: idCita, idMedicamento: idMedicamento, fechaIngreso: fechaIngreso, raon: razon });
