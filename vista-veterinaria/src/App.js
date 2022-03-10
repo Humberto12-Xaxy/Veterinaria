@@ -3,7 +3,7 @@ import Register from './Componentes/registroUsuario/registerUser'
 function App() {
   return (
     <div className="App">
-      <Register/>
+      <AppRouter/>
     </div>
   );
 }
