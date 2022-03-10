@@ -5,11 +5,7 @@ import '../assets/css/nuevaMascota.css'
 
 
 export default function ActualizarMUser(){
-    const [nombre,setNombre] = useState('')
-    const [raza,setApellido] = useState('')
-    const [fecha,setEdad] = useState('')
-    const [razon,setUsuario] = useState('')
-
+  
     return(
         <div>
             <div className='updateMascota'>

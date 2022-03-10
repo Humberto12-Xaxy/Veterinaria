@@ -1,15 +1,24 @@
 import React from 'react'
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 import { useState } from 'react';
 import '../assets/css/nuevaMascota.css'
 import ActualizarMUser from './ActualizarMUser';
 export default function RegisterM(){
     const [nombre,setNombre] = useState('')
-    const [raza,setApellido] = useState('')
-    const [fecha,setEdad] = useState('')
-    const [razon,setUsuario] = useState('')
+    const [raza,setRaza] = useState('')
+    const [fecha,setFecha] = useState('')
+    const [razon,setRazon] = useState('')
 
-
+    
+    const handleRegister=()=>{
+        const dato = {
+            nombre:nombre,
+            raza:raza,
+            fechaIngreso:fecha,
+            razon:razon,
+        };
+        axios.post('http://localhost:9998/mascota/add', dato);
+    }
     return(
         <div>
             <div className='registroMascota'>
@@ -19,21 +28,24 @@ export default function RegisterM(){
                     <ul>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="nombreM">Nombre de la mascota</span>
-                        <input type="text" class="form-control"  aria-describedby="basic-addon1"/>
+                        <input type="text" class="form-control"  aria-describedby="basic-addon1" onChange={e => setNombre(e.target.value)}/>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="raza">Raza de la mascota</span>
-                        <input type="text" class="form-control" aria-describedby="basic-addon1"/>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" onChange={e => setRaza(e.target.value)}/>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="fecha">Fecha de ingreso</span>
-                        <input type="date" class="form-control"  aria-describedby="basic-addon1"/>
+                        <input type="date" class="form-control"  aria-describedby="basic-addon1" onChange={e => setFecha(e.target.value)}/>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="razon">Razon de ingreso</span>
-                        <input type="text" class="form-control" aria-describedby="basic-addon1"/>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" onChange={e => setRazon(e.target.value)}/>
                     </div>
-                    <button id= 'boton' type="button" class="btn btn-outline-success">Registrar mascota</button>
+                    <button id= 'boton' type="button" class="btn btn-outline-success" onClick={()=>{ 
+                        console.log(fecha)
+                        handleRegister()
+                    }}>Registrar mascota</button>
                     </ul>
                     
                 </div>

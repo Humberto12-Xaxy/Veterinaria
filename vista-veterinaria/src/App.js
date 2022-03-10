@@ -5,7 +5,8 @@ import RegisterM from './Componentes/VistaMascota/AddMascotaUser';
 function App() {
   return (
     <div className="App">
-      <RegisterM/>
+      {/* <RegisterM/> */}
+     <AppRouter/>
     </div>
   );
 }

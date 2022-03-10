@@ -29,12 +29,12 @@ export default function ActualizarM(props) {
         <div className="aniadir margen ">
             <h2>Actualizar Mascota</h2>
             <div className="">
-                {/* <input className='input-group-text texto' type='number' id='idMascota' placeholder='IdMascota' onChange={e=>setIdMascota(parseInt(e.target.value))}></input> */}
+                <input className='input-group-text texto' type='number' id='idMascota' placeholder='IdMascota' onChange={e=>setIdMascota(parseInt(e.target.value))}></input>
                 <input className='input-group-text texto' type="text" name="nombre" id="nombreM2" placeholder='Nombre' onChange={e => setNombre(e.target.value)} />
                 <input className='input-group-text texto' type="text" name="tipo" id="tipoM2" placeholder='Tipo' onChange={e => setTipo(e.target.value)} />
-                {/* <input className='input-group-text texto' type="number" name="idDuenio" id="idDuenioM2" placeholder='IdDuenio' onChange={e=>setIdDuenio(parseInt(e.target.value))}/>
+                <input className='input-group-text texto' type="number" name="idDuenio" id="idDuenioM2" placeholder='IdDuenio' onChange={e=>setIdDuenio(parseInt(e.target.value))}/>
                     <input className='input-group-text texto' type="number" name="idCita" id="idCitaM2" placeholder='IdCita' onChange={e=>setIdCita(parseInt(e.target.value))}/>
-                    <input className='input-group-text texto' type="number" name="idMedicamento" id="idMedicamentoM2" placeholder='IdMedicamento' onChange={e=>setIdMedicamento(parseInt(e.target.value))}/> */}
+                    <input className='input-group-text texto' type="number" name="idMedicamento" id="idMedicamentoM2" placeholder='IdMedicamento' onChange={e=>setIdMedicamento(parseInt(e.target.value))}/>
                 <input className='input-group-text texto' type="text" name="fechaIngreso" id="fechaIngresoM2" placeholder='Fecha de ingreso' onChange={e => setFechaIngreso(e.target.value)} />
                 <input className='input-group-text texto' type="text" name="razon" id="razonM2" placeholder='Razon' onChange={e => setRazon(e.target.value)} />
             </div>
