@@ -23,7 +23,7 @@ const handleRegister = async () => {
         rol : rol
 
     }
-
+    
    const resultado = await axios.post('http://localhost:18080/user/registro',usuario_JSON)
    console.log(resultado)
    setIsRegister(resultado)
@@ -32,6 +32,7 @@ const handleRegister = async () => {
 
 
 }
+
 
  
 

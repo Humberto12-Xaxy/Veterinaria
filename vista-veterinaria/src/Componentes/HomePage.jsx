@@ -8,7 +8,9 @@ export default function HomePage() {
     useEffect(()=>{
         document.title = 'Veterinaria';
     })
+    console.log(document.cookie.length)
     return (
+        
         <div>
             <ProductoImagen url={img} clase='ImgBienvenida'/>
             <ProductoTexto/>
