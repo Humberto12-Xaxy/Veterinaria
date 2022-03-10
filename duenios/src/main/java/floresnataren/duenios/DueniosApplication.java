@@ -15,4 +15,5 @@ public class DueniosApplication {
 	public RestTemplate getresttemplate(){
 		return new RestTemplate();
 	}
+	
 }

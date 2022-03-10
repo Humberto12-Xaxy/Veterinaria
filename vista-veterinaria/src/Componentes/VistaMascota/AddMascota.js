@@ -15,17 +15,20 @@ export default function AddMascota(props) {
             console.log()
         }).catch()
     }
+
     const handleClick= ()=>{
 
         const dato = {nombre:nombre,tipo:tipo,idDuenio:idDuenio,idCita:idCita,idMedicamento:idMedicamento,fechaIngreso:fechaIngreso,razon:razon};
         peticionPost(dato,'http://localhost:9998/mascota/add');
     }
+
     const hundleClick = () =>{
         alert('Se agregará el dato')
         axios.get('http://localhost:9998/listMascotas').then(response=>{
             props.onMascotasChange(response.data);
         }).catch(console.log('No se pudo actualizar'));
     }
+    
     return (
         <div>
             <div className="aniadir">

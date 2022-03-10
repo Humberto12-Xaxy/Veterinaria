@@ -103,9 +103,19 @@ public class DuenioController {
     public String login(@RequestBody UsuarioCredentials credentials){
         User usuario = userRepositorio.findByUsernameAndPassword(credentials.getUser(), credentials.getPassword());
         if (usuario != null)
-            return getJWTToken(usuario.getusername());
+            return getJWTToken(usuario.getUsername());
         else
             return "No hay";
 
     }
+
+    @PostMapping(value = "/registerUser")
+    public void register(@RequestBody User usuario){
+        userRepositorio.save(usuario);
+    }
+
+
+
+
+
 }
