@@ -12,7 +12,7 @@ export default function NavBar() {
             </div>
             <nav className="">
             <div className="botones" id="navbarNavAltMarkup">
-                <Link to="/" className="btn btns inicio"> Inicio</Link>
+                <Link to="/" className="btn btns inicio"> Inicio</Link>     
                 <div className="">
                     <NavLink exact activeClassName="active" to="/citas" className="btn btns"> Citas </NavLink>
                     <NavLink exact activeClassName="active" to="/duenios" className="btn btns"> Dueños </NavLink>
