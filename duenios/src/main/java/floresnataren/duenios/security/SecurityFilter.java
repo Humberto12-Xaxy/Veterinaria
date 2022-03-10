@@ -27,7 +27,6 @@ public class SecurityFilter {
                     .authorizeRequests()
                     .antMatchers(HttpMethod.POST, "/user/**").permitAll()
 
-
                     .anyRequest().authenticated()
                     .and()
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
