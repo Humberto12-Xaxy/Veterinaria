@@ -17,7 +17,7 @@ export default function AppRouter() {
             <NavBar/>
                 <div>
                     <Routes>
-                        <Route path='/' element={<Login/>}/>
+        
                         <Route path='/' element={<HomePage/>}/>
                         <Route path = '/citas' element={<MenuPrincipal/>}/>
                         <Route path='/duenios' element={<MenuPrincipalD/>}/>

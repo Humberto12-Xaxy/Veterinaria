@@ -10,6 +10,7 @@ const Login = () => {
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('')
     let [isLogin, setIsLogin] = useState(false)
+    const [id, setId] = useState("false")
 
     const handleLogin = () => {
         let credentials = {
@@ -30,7 +31,10 @@ const Login = () => {
     const methodPost = async (credentials) => {
         const res = await axios.post('http://localhost:18080/user/login', credentials)
         if (res.data !== 'No hay'){
-            document.cookie = 'token=' + res.data
+            document.cookie = 'token=' + res.data[0]
+            console.log(res.data)
+            console.log(res.data[1])
+            
             setIsLogin(true)
         }
     }
